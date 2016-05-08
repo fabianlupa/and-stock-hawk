@@ -51,7 +51,7 @@ public class QuoteCursorAdapter extends CursorRecyclerViewAdapter<QuoteCursorAda
         int sdk = Build.VERSION.SDK_INT;
         if (cursor.getInt(cursor.getColumnIndex("is_up")) == 1) {
             if (sdk < Build.VERSION_CODES.JELLY_BEAN) {
-                viewHolder.change.setBackgroundDrawable(
+                viewHolder.change.setBackground(
                         mContext.getResources().getDrawable(R.drawable.percent_change_pill_green));
             } else {
                 viewHolder.change.setBackground(
@@ -59,7 +59,7 @@ public class QuoteCursorAdapter extends CursorRecyclerViewAdapter<QuoteCursorAda
             }
         } else {
             if (sdk < Build.VERSION_CODES.JELLY_BEAN) {
-                viewHolder.change.setBackgroundDrawable(
+                viewHolder.change.setBackground(
                         mContext.getResources().getDrawable(R.drawable.percent_change_pill_red));
             } else {
                 viewHolder.change.setBackground(
