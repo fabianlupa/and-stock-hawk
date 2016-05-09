@@ -51,11 +51,17 @@ public class Utils {
     }
 
     public static String truncateBidPrice(String bidPrice) {
+        // Check if the API returned a bid price
+        if (bidPrice.equals("null")) return "???";
+
         bidPrice = String.format(Locale.getDefault(), "%.2f", Float.parseFloat(bidPrice));
         return bidPrice;
     }
 
     public static String truncateChange(String change, boolean isPercentChange) {
+        // Check if the API returned a change percentage
+        if (change.equals("null")) return "???%";
+
         String weight = change.substring(0, 1);
         String ampersand = "";
         if (isPercentChange) {
