@@ -35,6 +35,9 @@ public class StockDetailActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stock_detail);
 
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
         mId = getIntent().getExtras().getString(EXTRA_ID);
         if (mId == null) mId = savedInstanceState.getString(EXTRA_ID);
 
